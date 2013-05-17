@@ -1,26 +1,76 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.13'
+gem 'unicorn', '~>4.4.0'
+gem 'unicorn-rails'
+
+gem 'devise'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+#Form/Validation
+gem 'simple_form'
+gem 'validates_timeliness'
 
+#Decorators for models
+gem 'draper', '~>0.18.0'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+#Pagination for models
+gem 'kaminari'
+gem 'kaminari-bootstrap'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+# Environment specific constants
+gem 'rails_config'
 
-  gem 'uglifier', '>= 1.0.3'
+# Email
+gem 'sanitize_email'
+
+#ics support
+gem 'icalendar'
+
+# Monitoring
+gem 'newrelic_rpm'
+
+group :development, :test, :build do
+  gem 'sqlite3'
 end
 
-gem 'jquery-rails'
+group :development, :test, :test_one, :qa, :staging do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'brakeman'
+end
+
+group :test, :test_one, :qa, :staging do
+  gem 'shoulda-matchers'
+  gem 'capybara', '~> 1.1.3'
+  gem 'capybara-webkit'
+  gem 'capybara-screenshot', '~> 0.3.0'
+  gem 'spork-rails'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'rb-fsevent', '~> 0.9.1'
+  # Specific version required for BSD
+  gem 'sys-proctable', '0.9.1', :git => 'https://github.com/djberg96/sys-proctable.git', :branch => 'sys-proctable-0.9.1'
+  gem 'fuubar'
+end
+
+gem 'simplecov', :require => false, group: :test
+
+group :assets do
+  gem 'sass-rails'
+  # Special version fixed by Kevin
+  gem 'bootstrap-sass'
+  gem 'compass-rails'
+  gem 'font-awesome-sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
+  gem 'jquery-rails', '~> 2.2.1'
+end
+
+gem 'debugger', group: [:development, :test]
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
