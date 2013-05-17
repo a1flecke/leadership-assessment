@@ -41,6 +41,7 @@ group :development, :test, :test_one, :qa, :staging do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'brakeman'
+  gem 'guard-rails'
 end
 
 group :test, :test_one, :qa, :staging do
