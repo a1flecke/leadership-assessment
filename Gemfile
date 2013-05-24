@@ -44,6 +44,10 @@ group :development, :test, :test_one, :qa, :staging do
   gem 'guard-rails'
 end
 
+group :test do
+   gem 'database_cleaner'
+ end
+
 group :test, :test_one, :qa, :staging do
   gem 'shoulda-matchers'
   gem 'capybara', '~> 1.1.3'
