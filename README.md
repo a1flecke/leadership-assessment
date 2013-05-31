@@ -1,6 +1,6 @@
 leadership-assessment
 =====================
-TODO:  Need to look into how to add roles to devise (Reviewer, Reviewee)
+TODO:  Remove assessment_category_score_column from Assessment
 
 DataModel:
 Users, Assessment, Categories

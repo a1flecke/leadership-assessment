@@ -4,6 +4,6 @@ FactoryGirl.define do
   factory :assessment_category_score do
     assessment nil
     category nil
-    score ""
+    score {rand(1..10)}
   end
 end
