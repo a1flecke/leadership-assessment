@@ -7,9 +7,11 @@ FactoryGirl.define do
 
   factory :assessment_with_categories, parent: :assessment do |f|
     f.categories {
+      categories = Array.new()
       4.times do
-        FactoryGirl.create(:category)
+        categories << FactoryGirl.create(:category)
       end
+      categories
     }
   end
 end

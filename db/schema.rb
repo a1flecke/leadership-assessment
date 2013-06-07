@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130531180504) do
+ActiveRecord::Schema.define(:version => 20130607183022) do
 
   create_table "assessment_category_scores", :force => true do |t|
     t.integer  "assessment_id"
@@ -26,12 +26,9 @@ ActiveRecord::Schema.define(:version => 20130531180504) do
 
   create_table "assessments", :force => true do |t|
     t.string   "name"
-    t.integer  "assessment_category_score_id"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
-
-  add_index "assessments", ["assessment_category_score_id"], :name => "index_assessments_on_assessment_category_score_id"
 
   create_table "categories", :force => true do |t|
     t.string   "name"

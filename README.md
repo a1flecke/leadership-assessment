@@ -1,6 +1,6 @@
 leadership-assessment
 =====================
-TODO:  Remove assessment_category_score_column from Assessment
+TODO:  finish category specs
 
 DataModel:
 Users, Assessment, Categories
